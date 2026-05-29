@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個人の利益と関係的存在</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,300;0,400;1,300&family=DM+Mono:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+
+  <header>
+    <div class="label-mono">Rational Choice / Conflict Resolution</div>
+    <h1>
+      <em>個人</em>の利益最大化は、<br>
+      <em>人間</em>としての私を前提にしてはじめて成立する
+    </h1>
+  </header>
+
+  <div class="diagram-wrap">
+    <svg class="main-svg" viewBox="0 0 600 530" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+
+        <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stop-color="#2a2518" stop-opacity="0.65"/>
+          <stop offset="100%" stop-color="#0f0e0b" stop-opacity="0"/>
+        </radialGradient>
+        <radialGradient id="selfGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stop-color="#c9a84c" stop-opacity="0.95"/>
+          <stop offset="100%" stop-color="#a07830" stop-opacity="0.75"/>
+        </radialGradient>
+        <radialGradient id="legalGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%"   stop-color="#e8b84b" stop-opacity="0.30"/>
+          <stop offset="100%" stop-color="#c9a84c" stop-opacity="0.06"/>
+        </radialGradient>
+
+        <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="3" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="glow-strong" x="-40%" y="-40%" width="180%" height="180%">
+          <feGaussianBlur stdDeviation="5" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <filter id="glow-node" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="2" result="blur"/>
+          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+
+        <marker id="arrow-gold" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#c9a84c"/>
+        </marker>
+        <marker id="arrow-red" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#c0392b"/>
+        </marker>
+        <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#7ac4d8"/>
+        </marker>
+
+      </defs>
+
+      <!-- Background radial glow -->
+      <ellipse cx="300" cy="265" rx="240" ry="222" fill="url(#bgGrad)"/>
+
+      <!-- ======================================================
+           OUTER RING : 関係的存在の層 (ζ-layer)
+      ====================================================== -->
+      <circle class="ring-outer"
+              cx="300" cy="265" r="186"
+              fill="none"
+              stroke="#4a8a9a" stroke-width="1.8" stroke-dasharray="6 5"
+              opacity="0.30"/>
+
+      <text x="300" y="70"
+            text-anchor="middle"
+            font-family="'IBM Plex Serif', serif" font-size="13" font-weight="300"
+            fill="#7ac4d8" opacity="0.95">
+        人間としての私 — 関係的・縁起的存在
+      </text>
+      <text x="300" y="86"
+            text-anchor="middle"
+            font-family="'DM Mono', monospace" font-size="9.5"
+            fill="#4a8a9a" opacity="0.80">
+        ζ-layer : relational self
+      </text>
+
+      <!-- Relation nodes -->
+      <g class="rel-node" filter="url(#glow-node)">
+        <circle cx="486" cy="265" r="30" fill="#0d1f26" stroke="#4a8a9a" stroke-width="1.6" opacity="0.92"/>
+        <text x="486" y="261" text-anchor="middle" font-family="'IBM Plex Serif', serif" font-size="10.5" fill="#7ac4d8">職場</text>
+        <text x="486" y="276" text-anchor="middle" font-family="'IBM Plex Serif', serif" font-size="10.5" fill="#7ac4d8">関係</text>
+      </g>
+      <g class="rel-node" filter="url(#glow-node)">
+        <circle cx="419" cy="105" r="30" fill="#0d1f26" stroke="#4a8a9a" stroke-width="1.6" opacity="0.92"/>
+        <text x="419" y="101" text-anchor="middle" font-family="'IBM Plex Serif', serif" font-size="10.5" fill="#7ac4d8">地域</text>
+        <text x="419" y="116" text-anchor="middle" font-family="'IBM Plex Serif', serif" font-size="10.5" fill="#7ac4d8">共同体</text>
+      </g>
+      <g class="rel-node" filter="url(#glow-node)">
+        <circle cx="181" cy="105" r="30" fill="#0d1f26" stroke="#4a8a9a" stroke-width="1.6" opacity="0.92"/>
+        <text x="181" y="101" text-anchor="middle" font-family="'IBM Plex Serif', serif" font-size="10.5" fill="#7ac4d8">家族</text>
+        <text x="181" y="116" text-anchor="middle" font-family="'IBM Plex Serif', serif" font-size="10.5" fill="#7ac4d8">関係</text>
+      </g>
+      <g class="rel-node" filter="url(#glow-node)">
+        <circle cx="114" cy="265" r="30" fill="#0d1f26" stroke="#4a8a9a" stroke-width="1.6" opacity="0.92"/>
+        <text x="114" y="261" text-anchor="middle" font-family="'IBM Plex Serif', serif" font-size="10.5" fill="#7ac4d8">友人</text>
+        <text x="114" y="276" text-anchor="middle" font-family="'IBM Plex Serif', serif" font-size="9" fill="#7ac4d8">ネットワーク</text>
+      </g>
+      <g class="rel-node" filter="url(#glow-node)">
+        <circle cx="181" cy="425" r="30" fill="#0d1f26" stroke="#4a8a9a" stroke-width="1.6" opacity="0.92"/>
+        <text x="181" y="421" text-anchor="middle" font-family="'IBM Plex Serif', serif" font-size="10.5" fill="#7ac4d8">経済的</text>
+        <text x="181" y="436" text-anchor="middle" font-family="'IBM Plex Serif', serif" font-size="10.5" fill="#7ac4d8">文脈</text>
+      </g>
+      <g class="rel-node" filter="url(#glow-node)">
+        <circle cx="419" cy="425" r="30" fill="#0d1f26" stroke="#4a8a9a" stroke-width="1.6" opacity="0.92"/>
+        <text x="419" y="421" text-anchor="middle" font-family="'IBM Plex Serif', serif" font-size="10.5" fill="#7ac4d8">社会的</text>
+        <text x="419" y="436" text-anchor="middle" font-family="'IBM Plex Serif', serif" font-size="10.5" fill="#7ac4d8">評判</text>
+      </g>
+      <g class="rel-node" filter="url(#glow-node)">
+        <circle cx="300" cy="461" r="30" fill="#0d1f26" stroke="#4a8a9a" stroke-width="1.6" opacity="0.92"/>
+        <text x="300" y="457" text-anchor="middle" font-family="'IBM Plex Serif', serif" font-size="10.5" fill="#7ac4d8">文化的</text>
+        <text x="300" y="472" text-anchor="middle" font-family="'IBM Plex Serif', serif" font-size="10.5" fill="#7ac4d8">規範</text>
+      </g>
+
+      <!-- Web edges -->
+      <g stroke="#4a8a9a" stroke-width="0.7" opacity="0.28">
+        <line x1="486" y1="265" x2="419" y2="105"/>
+        <line x1="419" y1="105" x2="181" y2="105"/>
+        <line x1="181" y1="105" x2="114" y2="265"/>
+        <line x1="114" y1="265" x2="181" y2="425"/>
+        <line x1="181" y1="425" x2="300" y2="461"/>
+        <line x1="300" y1="461" x2="419" y2="425"/>
+        <line x1="419" y1="425" x2="486" y2="265"/>
+        <line x1="486" y1="265" x2="181" y2="105"/>
+        <line x1="419" y1="105" x2="114" y2="265"/>
+        <line x1="181" y1="105" x2="300" y2="461"/>
+        <line x1="114" y1="265" x2="419" y2="425"/>
+      </g>
+
+      <!-- Edges → center -->
+      <g stroke="#4a8a9a" stroke-width="1.1" opacity="0.42" marker-end="url(#arrow-blue)">
+        <line x1="456" y1="265" x2="380" y2="265"/>
+        <line x1="399" y1="124" x2="350" y2="214"/>
+        <line x1="201" y1="124" x2="252" y2="214"/>
+        <line x1="144" y1="265" x2="220" y2="265"/>
+        <line x1="201" y1="407" x2="252" y2="318"/>
+        <line x1="399" y1="407" x2="348" y2="318"/>
+        <line x1="300" y1="431" x2="300" y2="345"/>
+      </g>
+
+      <!-- ======================================================
+           MIDDLE RING : 法的人格の層
+      ====================================================== -->
+      <circle class="ring-mid"
+              cx="300" cy="265" r="118"
+              fill="url(#legalGrad)"
+              stroke="#c9a84c" stroke-width="2.2" stroke-dasharray="4 3"
+              opacity="0.45"/>
+
+      <text x="300" y="153"
+            text-anchor="middle"
+            font-family="'IBM Plex Serif', serif" font-size="11.5" font-weight="300"
+            fill="#c9a84c" opacity="0.92">
+        法的人格としての私
+      </text>
+      <text x="300" y="168"
+            text-anchor="middle"
+            font-family="'DM Mono', monospace" font-size="9"
+            fill="#a07830" opacity="0.80">
+        legal subject : m* = argmax E[U(X(m))]
+      </text>
+
+      <!-- ======================================================
+           INNER CORE : 私
+      ====================================================== -->
+      <circle cx="300" cy="265" r="40"
+              fill="#1a1510" stroke="#c9a84c" stroke-width="2.2"
+              filter="url(#glow-strong)"/>
+      <circle cx="300" cy="265" r="34"
+              fill="url(#selfGrad)" opacity="0.75"/>
+      <text x="300" y="260"
+            text-anchor="middle"
+            font-family="'IBM Plex Serif', serif" font-size="19" font-weight="400"
+            fill="#fff" filter="url(#glow)">
+        私
+      </text>
+      <text x="300" y="278"
+            text-anchor="middle"
+            font-family="'DM Mono', monospace" font-size="8.5"
+            fill="#e8d8a0" opacity="0.95">
+        self
+      </text>
+
+      <!-- ======================================================
+           ATTORNEY ARROW
+      ====================================================== -->
+      <rect x="12" y="242" width="76" height="46" rx="3"
+            fill="#1a1510" stroke="#c9a84c" stroke-width="1.2" opacity="0.92"/>
+      <text x="50" y="261"
+            text-anchor="middle"
+            font-family="'IBM Plex Serif', serif" font-size="10.5"
+            fill="#c9a84c">弁護士の</text>
+      <text x="50" y="276"
+            text-anchor="middle"
+            font-family="'IBM Plex Serif', serif" font-size="10.5"
+            fill="#c9a84c">介入</text>
+
+      <line class="arrow-atty"
+            x1="88" y1="265" x2="178" y2="265"
+            stroke="#c9a84c" stroke-width="2.2"
+            marker-end="url(#arrow-gold)"/>
+
+      <!-- ======================================================
+           CUT LINE
+      ====================================================== -->
+      <line class="cut-line"
+            x1="182" y1="200" x2="182" y2="330"
+            stroke="#c0392b" stroke-width="2.8" stroke-dasharray="5 3"
+            opacity="0.75"/>
+      <g opacity="0.90" filter="url(#glow)">
+        <line x1="172" y1="253" x2="192" y2="277" stroke="#c0392b" stroke-width="2.8"/>
+        <line x1="192" y1="253" x2="172" y2="277" stroke="#c0392b" stroke-width="2.8"/>
+      </g>
+      <text x="156" y="345"
+            text-anchor="middle"
+            font-family="'DM Mono', monospace" font-size="8.5"
+            fill="#c0392b" opacity="0.95">
+        射程の限界
+      </text>
+      <text x="156" y="358"
+            text-anchor="middle"
+            font-family="'DM Mono', monospace" font-size="7.5"
+            fill="#7a3030" opacity="0.85">
+        scope boundary
+      </text>
+
+      <!-- ======================================================
+           PARADOX ARROW
+      ====================================================== -->
+      <path class="cut-line"
+            d="M 340 260 Q 400 232 456 260"
+            fill="none"
+            stroke="#c0392b" stroke-width="1.8" stroke-dasharray="5 3"
+            marker-end="url(#arrow-red)"
+            opacity="0.65"/>
+      <text x="398" y="228"
+            text-anchor="middle"
+            font-family="'DM Mono', monospace" font-size="8.5"
+            fill="#c0392b" opacity="0.88">
+        関係の切断
+      </text>
+
+      <!-- Paradox label -->
+      <rect x="170" y="488" width="260" height="38" rx="3"
+            fill="#1a0c0c" stroke="#c0392b" stroke-width="1.2" opacity="0.88"/>
+      <text x="300" y="505"
+            text-anchor="middle"
+            font-family="'IBM Plex Serif', serif" font-size="10"
+            fill="#e07060">
+        利益最大化が利益を享受する場を破壊する
+      </text>
+      <text x="300" y="519"
+            text-anchor="middle"
+            font-family="'DM Mono', monospace" font-size="8"
+            fill="#7a3030">
+        paradox of utility maximization
+      </text>
+
+    </svg>
+  </div>
+
+  <!-- Annotations -->
+  <div class="annotations">
+    <div class="anno">
+      <div class="anno-title">ζ-layer — 関係的自己</div>
+      <p>私が利益を享受する「場」そのもの。家族・職場・地域・評判の網の目。この層なしに、利益を受け取る主体は存在しない。</p>
+    </div>
+    <div class="anno">
+      <div class="anno-title">法的人格としての私</div>
+      <p>弁護士が操作する抽象的な点。<span style="font-family:'DM Mono',monospace;color:#c9a84c;font-size:0.8em;">m* = argmax E[U(X(m))]</span> が機能する層。比較静学的な枠組みであることを自覚した上で使う。</p>
+    </div>
+    <div class="anno cut">
+      <div class="anno-title">射程の限界</div>
+      <p>弁護士の介入矢印は法的人格層で止まる。関係的自己の層を貫通しない——しかし、現実の利益はその外層に依存している。</p>
+    </div>
+    <div class="anno cut">
+      <div class="anno-title">パラドクス</div>
+      <p>内層の利益を最大化する行為（訴訟）が、外層の関係ノードを切断する。利益を享受するはずの場が消える。これは目標関数の設定ミスである。</p>
+    </div>
+  </div>
+
+  <!-- Formula strip -->
+  <div class="formula-strip">
+    <div class="f-label">定式化</div>
+    <div class="f-math">U(·) ⊃ {心理的納得, 関係的文脈, 経済的合理性}</div>
+    <div class="f-note">
+      <em>U(·)</em> に関係的文脈を含めること自体が、弁護士モデルへの批判的介入。
+      比較静学として括弧に入れているものを<em>自覚する</em>ことで、射程が誠実に示される。
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

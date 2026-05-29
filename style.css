@@ -1,0 +1,231 @@
+/* =========================================
+   ADR / 個人の利益と関係的存在
+   style.css — visibility-improved version
+   ========================================= */
+
+:root {
+  --bg:              #0f0e0b;
+  --surface:         #1c1a15;
+  --gold:            #c9a84c;
+  --amber:           #e8b84b;
+  --amber-dim:       rgba(200,160,60,0.18);
+  --amber-mid:       rgba(200,160,60,0.40);
+  --red-cut:         #c0392b;
+  --text:            #ede5cf;
+  --text-body:       #ccc5b0;   /* 注釈本文：旧 #b8af9a より明るく */
+  --text-dim:        #8a806a;
+  --node-rel:        #4a8a9a;
+  --node-rel-bright: #7ac4d8;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ---- Body ---- */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'IBM Plex Serif', 'Noto Serif JP', serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 44px 20px 72px;
+  overflow-x: hidden;
+}
+
+/* Grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+}
+
+/* ---- Wrapper ---- */
+.wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 840px;
+  animation: fade-in 0.9s ease both;
+}
+
+/* ---- Header ---- */
+header { text-align: center; margin-bottom: 52px; }
+
+.label-mono {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.20em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  opacity: 0.9;
+}
+
+h1 {
+  font-size: clamp(1.05rem, 2.8vw, 1.45rem);
+  font-weight: 300;
+  letter-spacing: 0.07em;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+h1 em {
+  font-style: normal;
+  color: var(--amber);
+  border-bottom: 1px solid var(--amber-mid);
+  padding-bottom: 1px;
+}
+
+/* ---- Diagram ---- */
+.diagram-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 0.9;
+  max-height: 580px;
+}
+
+svg.main-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* ---- Annotation panels ---- */
+.annotations {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 560px) {
+  .annotations { grid-template-columns: 1fr; }
+}
+
+.anno {
+  background: var(--surface);
+  border: 1px solid rgba(201,168,76,0.22);
+  border-left: 3px solid var(--gold);
+  padding: 18px 20px;
+  border-radius: 2px;
+}
+
+.anno.cut { border-left-color: var(--red-cut); }
+
+.anno-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 9px;
+}
+
+.anno.cut .anno-title { color: var(--red-cut); }
+
+.anno p {
+  font-size: 0.82rem;
+  line-height: 1.85;
+  color: var(--text-body);
+  font-weight: 300;
+}
+
+/* ---- Formula strip ---- */
+.formula-strip {
+  margin-top: 28px;
+  background: var(--surface);
+  border: 1px solid rgba(201,168,76,0.18);
+  padding: 22px 26px;
+  border-radius: 2px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.formula-strip .f-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.66rem;
+  color: var(--text-dim);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+.formula-strip .f-math {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.88rem;
+  color: var(--amber);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.formula-strip .f-note {
+  font-size: 0.78rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  flex: 1;
+  min-width: 200px;
+}
+
+.f-note em { font-style: normal; color: var(--text); }
+
+/* ---- Animations ---- */
+@keyframes pulse-ring {
+  0%, 100% { opacity: 0.28; }
+  50%       { opacity: 0.46; }
+}
+
+@keyframes pulse-mid {
+  0%, 100% { opacity: 0.38; }
+  50%       { opacity: 0.58; }
+}
+
+@keyframes node-glow {
+  0%, 100% { opacity: 0.78; }
+  50%       { opacity: 1; }
+}
+
+@keyframes arrow-loop {
+  /* ループするダッシュアニメーション */
+  from { stroke-dashoffset: 48; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes cut-flash {
+  0%, 100% { opacity: 0.55; }
+  50%       { opacity: 0.95; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* SVG animation classes */
+.ring-outer { animation: pulse-ring 4s ease-in-out infinite; }
+.ring-mid   { animation: pulse-mid  3.5s ease-in-out infinite 0.5s; }
+
+.rel-node                { animation: node-glow 3s ease-in-out infinite; }
+.rel-node:nth-child(2)   { animation-delay: 0.4s; }
+.rel-node:nth-child(3)   { animation-delay: 0.8s; }
+.rel-node:nth-child(4)   { animation-delay: 1.2s; }
+.rel-node:nth-child(5)   { animation-delay: 1.6s; }
+.rel-node:nth-child(6)   { animation-delay: 2.0s; }
+.rel-node:nth-child(7)   { animation-delay: 2.4s; }
+
+/* 弁護士矢印：ループアニメーションに変更（旧 arrow-slide は1回限り） */
+.arrow-atty {
+  stroke-dasharray: 10 5;
+  animation: arrow-loop 1.8s linear infinite;
+}
+
+.cut-line { animation: cut-flash 2s ease-in-out infinite 1s; }
