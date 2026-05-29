@@ -134,6 +134,8 @@ svg.main-svg {
   line-height: 1.85;
   color: var(--text-body);
   font-weight: 300;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* ---- Formula strip ---- */
@@ -165,7 +167,9 @@ svg.main-svg {
   color: var(--amber);
   letter-spacing: 0.04em;
   line-height: 1.5;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .formula-strip .f-note {
