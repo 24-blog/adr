@@ -2,7 +2,7 @@ Preview<br>
 https://24-blog.github.io/adr/
 
 
-COPYRIGHT<br>
+⚠️COPYRIGHT<br>
 The source code of this repository is licensed under MIT.
 
 Textual commentary written by the repository owner is
