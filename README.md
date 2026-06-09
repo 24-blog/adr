@@ -8,5 +8,6 @@ The source code of this repository is licensed under MIT.
 Textual commentary written by the repository owner is
 licensed under CC BY-NC-ND 4.0.
 
-⚠️ABOUT<br>
-It has not been added yet.
+
+> [!TIP]
+> It has not been added yet.
