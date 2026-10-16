@@ -233,3 +233,71 @@ svg.main-svg {
 }
 
 .cut-line { animation: cut-flash 2s ease-in-out infinite 1s; }
+
+/* =========================================
+   理論ページ (theory/)
+   ========================================= */
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 28px;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  text-decoration: none;
+  opacity: 0.85;
+}
+.back-link:hover { opacity: 1; }
+
+/* 数式ボックス（MathJaxのSVGは currentColor を継承する） */
+.formula-box {
+  background: var(--surface);
+  border: 1px solid rgba(201,168,76,0.22);
+  border-left: 3px solid var(--gold);
+  border-radius: 2px;
+  padding: 22px 26px;
+  color: var(--amber);
+  text-align: center;
+  overflow-x: auto;
+}
+.formula-box mjx-container { margin: 0 !important; }
+
+/* 記号表 */
+.formula-table-container { margin-top: 36px; overflow-x: auto; }
+
+.formula-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+
+.formula-table th,
+.formula-table td {
+  padding: 12px;
+  border: 1px solid rgba(201,168,76,0.22);
+  text-align: left;
+  vertical-align: top;
+}
+
+.formula-table th {
+  background: var(--surface);
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  border-bottom: 2px solid var(--amber-mid);
+}
+
+.formula-table th:nth-child(1) { width: 20%; }
+.formula-table th:nth-child(2) { width: 30%; }
+
+.formula-table td { color: var(--text-body); font-weight: 300; }
+
+.formula-table td:first-child {
+  text-align: center;
+  font-weight: 400;
+  color: var(--amber);
+}
